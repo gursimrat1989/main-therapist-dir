@@ -1,0 +1,13 @@
+{
+    "name": "Issues",
+    "alias": "issues",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Issues\\Providers\\IssuesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

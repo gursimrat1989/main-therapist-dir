@@ -1,0 +1,13 @@
+{
+    "name": "BlogCategories",
+    "alias": "blogcategories",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\BlogCategories\\Providers\\BlogCategoriesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

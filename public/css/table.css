@@ -1,0 +1,40 @@
+#beauti-table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#beauti-table td, #beauti-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#beauti-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#beauti-table tr:hover {background-color: #ddd;}
+
+#beauti-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+tr, th, td {
+    border: none !important;
+}
+table
+{
+  border: 0px !important;
+}
+#beauti-table_processing {
+    background: none;
+    box-shadow: none;
+    border: 0px;
+    color: transparent;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover
+{
+  background: transparent !important;
+  border-color: transparent !important;
+}

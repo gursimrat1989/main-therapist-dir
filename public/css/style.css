@@ -1,0 +1,194 @@
+.brand-link
+{
+	text-align: center;
+}
+.relative
+{
+	position: relative;
+}
+.heading-title
+{
+    position: absolute;
+    right: 1px;
+    top: 5px;
+}
+
+.relative.heading-title-outer {
+
+    margin-top: 10px;
+
+}
+.green
+{
+	color: #4CAF50;
+}
+.red
+{
+	color: red;
+}
+.submit-button
+{
+	width: 20% !important;
+}
+.no-padding
+{
+	padding: 0px !important;
+}
+.show-profile-image{
+
+    width: 101px;
+    margin-top: 21px;
+    border: 2px solid #28a745;
+
+}
+.modal-header .close
+{
+	display: none;
+}
+.alert ul{
+    padding: 0px 10px;
+    margin: 0px !important;
+}
+
+/* Theme */
+.nav-sidebar .nav-item > .nav-link {
+
+    color: white !important;
+
+}
+[class*="sidebar-dark-"] .sidebar a {
+
+    color: white !important;
+
+}
+.nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+
+    background-color: #76bb76 !important;
+
+}
+.brand-image.img-circle.elevation-3 {
+    box-shadow: none !important;
+}
+.img-circle.elevation-2 {
+    box-shadow: none !important;
+}
+[class*="sidebar-dark"] .brand-link {
+    border-bottom: 0px !important;
+}
+.row.mt-2.mb-2
+{
+      margin-top: 0px !important; 
+}
+.brand-image.img-circle.elevation-3 {
+
+    width: 50%;
+    border-radius: 0px !important;
+    max-height: 51px !important;
+
+}
+.logo-outer img {   
+
+    width: 200px;
+    margin: 0 auto;
+
+}
+.logo-outer
+{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.nav.nav-treeview {
+    background: #5eb762 !important;
+    border-radius: 5px;
+                font-size: 15px;
+    line-height: 0px;
+}
+.main-f0ooter {
+    font-size: 10px;
+}
+.nav-link.active {
+    background-color: #5dc661 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+}
+.elevation-1, [class*="sidebar-light-"] .nav-sidebar > .nav-item > .nav-link.active, [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-link.active, .callout {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+    background-color: #5dc661 !important;
+}
+.page-item.active a {
+    background: #4caf50 !important;
+}
+.nav-treeview p {
+
+    margin-left: 20px !important;
+
+}
+/* /Theme */
+
+/* Media CSS */
+    
+@media only screen and (max-width : 768px) {
+    .push-menu-icon
+    {
+        visibility: visible !important; 
+    }
+}                                                                       
+
+/* /Media CSS */
+
+/* Login */
+body.login {
+    background: #4CAF50;
+}
+.login .card {
+ background: #68ce6c !important;
+box-shadow: none !important;
+border: none;
+color:white;
+border-radius: 14px;
+}
+.login .btn.btn-link {
+    color: white !important;
+
+}
+.login .btn.btn-primary {
+
+    background: #2a8a2e !important;
+border: 1px solid #47d050 !important;
+
+}
+.login .card-header {
+    background: #68ce6c;
+    border: 0px !important;
+    border-radius: 35px;
+}
+.login .card-header img {
+    width: 301px;
+}
+.login .card-header {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+.login .card {
+    margin-top: 10%;
+}
+/* /Login */
+
+/* Multi select */
+
+.chosen-choices {
+    padding: 5px !important;
+    border-radius: 4px;
+    border: 1px solid 
+    #ccc !important;
+    width: 99% !important;
+}
+
+/* /Multi select */
+
+input[type="file"] {
+    border: 0px;
+    position: relative;
+    top: 9px;
+}

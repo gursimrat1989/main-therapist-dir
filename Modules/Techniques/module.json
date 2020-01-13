@@ -1,0 +1,13 @@
+{
+    "name": "Techniques",
+    "alias": "techniques",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Techniques\\Providers\\TechniquesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

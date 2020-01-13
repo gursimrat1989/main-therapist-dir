@@ -1,0 +1,13 @@
+{
+    "name": "Controller",
+    "alias": "controller",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Controller\\Providers\\ControllerServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

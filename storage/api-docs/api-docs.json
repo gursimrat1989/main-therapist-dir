@@ -1,0 +1,1492 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Therapist API's",
+        "description": "API's for the Therapist project",
+        "contact": {
+            "email": "gursimrat1989@gmail.com"
+        },
+        "version": "1.0"
+    },
+    "basePath": "/therapist-dir/public/api",
+    "paths": {
+        "/blog/article/add": {
+            "post": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Add blog article",
+                "operationId": "addBlogArticle",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "title",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "featured_image",
+                        "in": "formData",
+                        "description": "Featured image for the article.",
+                        "type": "file"
+                    },
+                    {
+                        "name": "is_featured",
+                        "in": "formData",
+                        "description": "Please use 1 for featuring article and 0 for not featuring.",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "category_id",
+                        "in": "formData",
+                        "description": "E.g. 45,2,4,6,3",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/blog/category/add": {
+            "post": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Add blog category",
+                "operationId": "addBlogCategory",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "title",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/blog/article/list": {
+            "get": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Blog article list",
+                "operationId": "blogArticleList",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/blog/article/list/featured": {
+            "get": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Featured article list",
+                "operationId": "blogFeaturedArticleList",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/blog/category/list": {
+            "get": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Blog category list",
+                "operationId": "blogCategoryList",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/blog/search": {
+            "get": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Blog Search",
+                "operationId": "searchBlog",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/blog/delete": {
+            "post": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Delete blog article",
+                "operationId": "blogArticleDelete",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "article_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/insurance/list": {
+            "get": {
+                "tags": [
+                    "Insurance"
+                ],
+                "summary": "Insurance List",
+                "operationId": "listInsurance",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/insurance/add": {
+            "post": {
+                "tags": [
+                    "Insurance"
+                ],
+                "summary": "Add insurance",
+                "operationId": "addInsurance",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/insurance/search": {
+            "get": {
+                "tags": [
+                    "Insurance"
+                ],
+                "summary": "Insurance Search",
+                "operationId": "searchInsurance",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/insurance/delete": {
+            "get": {
+                "tags": [
+                    "Insurance"
+                ],
+                "summary": "Delete insurance",
+                "operationId": "deleteInsurance",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "insurance_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/issues/list": {
+            "get": {
+                "tags": [
+                    "Issues"
+                ],
+                "summary": "Issues List",
+                "operationId": "listIssues",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/issue/add": {
+            "post": {
+                "tags": [
+                    "Issues"
+                ],
+                "summary": "Add issue",
+                "operationId": "addIssue",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/issues/add/description": {
+            "post": {
+                "tags": [
+                    "Issues"
+                ],
+                "summary": "Add issue description by users",
+                "operationId": "issuesDescriptionAdd",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "issue_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "issue_description",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/issues/list/description": {
+            "get": {
+                "tags": [
+                    "Issues"
+                ],
+                "summary": "List issue description by users",
+                "operationId": "issuesDescriptionList",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "issue_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/issues/get/name": {
+            "get": {
+                "tags": [
+                    "Issues"
+                ],
+                "summary": "Get issue name by id",
+                "operationId": "issuesGetName",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "issue_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/issues/description/update": {
+            "post": {
+                "tags": [
+                    "Issues"
+                ],
+                "summary": "Update issue description or explanation",
+                "operationId": "issuesDescriptionUpdate",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "description_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/issues/description/delete": {
+            "post": {
+                "tags": [
+                    "Issues"
+                ],
+                "summary": "Delete issue description or explanation",
+                "operationId": "issuesDescriptionDelete",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "description_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/issues/search": {
+            "get": {
+                "tags": [
+                    "Issues"
+                ],
+                "summary": "Insurance Search",
+                "operationId": "searchIssues",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/issue/delete": {
+            "get": {
+                "tags": [
+                    "Issues"
+                ],
+                "summary": "Delete issue",
+                "operationId": "deleteIssue",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "issue_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/newsletter/list/show": {
+            "get": {
+                "tags": [
+                    "Newsletter"
+                ],
+                "summary": "Show newsletter list",
+                "operationId": "showNewsletterList",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/newsletter/subscriber/add": {
+            "post": {
+                "tags": [
+                    "Newsletter"
+                ],
+                "summary": "Add subscriber",
+                "operationId": "addSubscriber",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "subscriber_email",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "list_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/services/list": {
+            "get": {
+                "tags": [
+                    "Services"
+                ],
+                "summary": "Services List",
+                "operationId": "listServices",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/service/add": {
+            "post": {
+                "tags": [
+                    "Services"
+                ],
+                "summary": "Add Service",
+                "operationId": "addService",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/services/search": {
+            "get": {
+                "tags": [
+                    "Services"
+                ],
+                "summary": "Services Search",
+                "operationId": "searchSearch",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/service/delete": {
+            "get": {
+                "tags": [
+                    "Services"
+                ],
+                "summary": "Delete service",
+                "operationId": "deleteService",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "service_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/techniques/list": {
+            "get": {
+                "tags": [
+                    "Techniques"
+                ],
+                "summary": "Issues List",
+                "operationId": "listTechniques",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/technique/add": {
+            "post": {
+                "tags": [
+                    "Techniques"
+                ],
+                "summary": "Add technique",
+                "operationId": "addTechnique",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/technique/add/description": {
+            "post": {
+                "tags": [
+                    "Techniques"
+                ],
+                "summary": "Add technique description by users",
+                "operationId": "techniqueDescriptionAdd",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "technique_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "technique_description",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/technique/list/description": {
+            "get": {
+                "tags": [
+                    "Techniques"
+                ],
+                "summary": "List technique description by users",
+                "operationId": "techniqueDescriptionList",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/technique/get/name": {
+            "get": {
+                "tags": [
+                    "Techniques"
+                ],
+                "summary": "Get technique name by id",
+                "operationId": "techniqueGetName",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "technique_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/techniques/description/update": {
+            "post": {
+                "tags": [
+                    "Techniques"
+                ],
+                "summary": "Update technique description or explanation",
+                "operationId": "techniquesDescriptionUpdate",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "description_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/techniques/description/delete": {
+            "post": {
+                "tags": [
+                    "Techniques"
+                ],
+                "summary": "Delete technique description or explanation",
+                "operationId": "techniquesDescriptionDelete",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "description_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/techniques/search": {
+            "get": {
+                "tags": [
+                    "Techniques"
+                ],
+                "summary": "Techniques Search",
+                "operationId": "searchTechniques",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/technique/delete": {
+            "get": {
+                "tags": [
+                    "Techniques"
+                ],
+                "summary": "Delete technique",
+                "operationId": "deleteTechnique",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "technique_id",
+                        "in": "query",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/user/detail": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Get user details",
+                "operationId": "userDetail",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/user/login": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Login a user",
+                "operationId": "loginUser",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/user/register": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Register a user",
+                "operationId": "registerUser",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password_confirmation",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/users/search": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Users Search",
+                "operationId": "searchUsers",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/user/therapist/list": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "User therapist list",
+                "operationId": "therapistList",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/user/get-by-name": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Get user by name",
+                "operationId": "userByName",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_name_slug",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/user/create/profile": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Create profile of a user",
+                "operationId": "createProfile",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "first_name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_name",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contact_number",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "address_1",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "address_2",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "bio",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/user/update/profile/pic": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Update profile pic of the user",
+                "operationId": "updateProfilePic",
+                "parameters": [
+                    {
+                        "name": "X-custom-header",
+                        "in": "header",
+                        "description": "header",
+                        "required": true,
+                        "type": "string",
+                        "default": "7890abcdefghijkl"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "pic",
+                        "in": "formData",
+                        "description": "Profile picture for the user.",
+                        "type": "file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}
